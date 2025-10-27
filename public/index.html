@@ -5,57 +5,233 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TalaSea</title>
     <link rel="stylesheet" href="./build/tailwind.css" />
+     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   </head>
-  <body class="bg-red-300">
-    <!----------------------------------------------MOBILE NAVBAR -->
-    <div class="bg-blue-300 flex justify-between items-center px-4 py-4">
-      <!-- menu icon -->
-      <div class="">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="size-6"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
+  <body class="">
+    <!-------------------------------------------------------------------------MOBIL && DESKTOP NAVBAR  -->
+    <div class="bg-white shadow-lg border border-b-gray-300 fixed top-0 left-0 right-0 z-10" x-data="{isOpenMenu:false}">
+      <nav
+        class="flex items-center justify-between px-4 py-5  container mx-auto 2xl:max-w-screen-2xl cursor-pointer"
+      >
+      <div class="flex flex-col w-full "> 
+        <!--logo hamber && logo talasea  -->
+        <div class="flex  justify-between"> 
+        <div class="flex items-center" >
+          <div  class="lg:hidden ml-2" @click="isOpenMenu=!isOpenMenu">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h14"
+              />
+            </svg>
+          </div>
+          <div class="flex items-center mr-2">
+            <img src="/postcss/assets/images/logo.svg" alt="" />
+            <ul class="text-base mr-4 hidden lg:flex items-center">
+              <li class="text-gray-800"><a href="#" class="flex items-center">معامله
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 10 4 4 4-4"/>
+                </svg>
+                </a>
+              </li>
+              <li class="px-2 whitespace-nowrap  text-gray-800"><a href="#" class="flex items-center">امکانات
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 10 4 4 4-4"/>
+                </svg>
+                </a>
+              </li>
+              <li class="px-2 whitespace-nowrap  text-gray-800"><a href="#" class="flex items-center">قیمت طلا 
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 10 4 4 4-4"/>
+                </svg>
+                </a>
+              </li>
+              <li class="px-2 whitespace-nowrap  text-gray-800"><a href="#" class="flex items-center">سایر
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m8 10 4 4 4-4"/>
+                </svg>
+                </a>
+              </li>
+              <li class="px-2 whitespace-nowrap flex items-center text-gray-800"><a href="#">شعب طلاسی</a></li>
+              <li class="px-2 whitespace-nowrap flex items-center text-gray-800"><a href="#">مجورهای طلاسی</a></li>
+            </ul>
+          </div>
+        </div>
+        <!--end logo hamber && logo talasea  -->
+        <!-- user-headeset && user && login -->
+        <div class="flex items-center lg:pl-5">
+            <svg
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14.079 6.839a3 3 0 0 0-4.255.1M13 20h1.083A3.916 3.916 0 0 0 18 16.083V9A6 6 0 1 0 6 9v7m7 4v-1a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Zm-7-4v-6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1Zm12-6h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v-6Z"
+              />
+            </svg>
+            <div class="bg-yellow-400 flex items-center mr-1.5 px-3 py-1.5 lg:px-4 lg:py-2  rounded-lg">
+              <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" stroke-width="2" d="M7 17v1a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1a3 3 0 0 0-3-3h-4a3 3 0 0 0-3 3Zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+              </svg>
+                <span class="text-xs font-bold whitespace-nowrap text-gray-800">ثبت نام/ ورود</span>
+          </div>
+        </div>
+        </div>
+        
+        <!--end user-headeset && user && login -->
+        <!--menu for mobile drop down  -->
+        <div>
+          <div class="bg-white flex flex-col lg:hidden text-slate-800 transition-all duration-700"  x-show="isOpenMenu" >
+          <ul class="text-xs mt-4 font-medium">
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">معامله</a></li>
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">امکانت</a></li>
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">قیمت طلا</a></li>
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">سایر</a></li>
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">شعب طلاسی</a></li>
+            <li class="p-2 bg-yellow-100 rounded-lg m-2 "><a href="#">مجوزهای طلاسی</a></li>
+          </ul>
       </div>
-      <!-- end menu icon -->
-      <!-- img logo -->
-      <div class="">
-        <img src="/postcss/assets/images/logo.svg" alt="" />
+        </div>
+         <!--end menu for mobile drop down  -->
       </div>
-      <!--end img logo  -->
-     
-      <!--button login && support icon -->
-      <div class="flex items-center ">
-          <svg
-          class="w-6 h-6 text-gray-800 dark:text-white"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M14.079 6.839a3 3 0 0 0-4.255.1M13 20h1.083A3.916 3.916 0 0 0 18 16.083V9A6 6 0 1 0 6 9v7m7 4v-1a1 1 0 0 0-1-1h-1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1Zm-7-4v-6H5a2 2 0 0 0-2 2v2a2 2 0 0 0 2 2h1Zm12-6h1a2 2 0 0 1 2 2v2a2 2 0 0 1-2 2h-1v-6Z"
-          />
-        </svg>
-        <div class="bg-yellow-400 px-4 py-2 rounded-lg mr-2">ورود</div>
-      </div>
-      <!--end button login && support icon -->
+      </nav>
+
     </div>
-    <!----------------------------------------------MOBILE NAVBAR -->
+    <!---------------------------------------------------------------------END MOBILE && DESKTOP NAVBAR  -->
+
+    <!--------------------------------------------------------------------------------------BRAD CRUMBS  -->
+      <div class="flex items-center text-gray-600 text-sm lg:text-base font-medium px-3 mt-28 mb-6  container mx-auto 2xl:max-w-screen-xl">
+        <span class="">طلاسی :</span>
+        <span class="">خرید طلای آب شده</span>
+        <span class="">
+          <svg class="w-6 h-6 text-gray-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+           <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m14 8-4 4 4 4"/>
+          </svg>
+        </span>
+        <span class="">محاسبه قیمت طلا</span>
+      </div>
+     <!--------------------------------------------------------------------------------------BRAD CRUMBS -->
+
+     <!-------------------------------------------------------------------------------------------title  -->
+     <div class="flex flex-col items-center justify-center mb-10">
+      <h1 class="text-base md:text-lg lg:text-xl font-bold text-gray-800 mb-3">محاسبه قیمت طلا به صورت آنلاین</h1>
+      <div class="flex text-sm md:text-base lg:text-lg  mb-2 font-medium text-gray-800">
+      <h2 class="">قیمت روز طلا 3 آبان 1404:</h2>
+      <h2>10,690,000</h2>
+      </div>
+      <h3 class="text-xs md:text-sm lg:text-base font-medium text-gray-600">براساس فرمول محاسبه اتحادیه طلا</h3>
+     </div>
+     <!----------------------------------------------------------------------------------------END title -->
+
+     <!--------------------------------------------------------------------------------------FORM INPUT  -->
+     <div class="py-5 container mx-auto 2xl:max-w-screen-xl mb-5">
+        <div class="flex flex-col px-4 text-gray-900">
+         <div class="md:flex md:items-center md:gap-x-5 text-sm md:text-base font-medium">
+           <div class="mb-5 md:w-1/2">
+            <label for="" class=""> <span class="block mb-1 mr-1.5">نرخ طلا</span> </label>
+              <input type="text" class="w-full p-4 rounded-xl border border-gray-400 outline-none">
+          </div>
+          <div class="mb-5  md:w-1/2">
+            <label for="" clas=""><span class="block mb-1 mr-1.5">وزن طلا</span></label>
+            <input type="text" class="w-full p-4 rounded-xl border border-gray-400 outline-none">
+          </div>
+         </div>
+          <div class="md:flex md:items-center md:gap-x-5 text-sm md:text-base font-medium">
+             <div class="mb-5 md:w-1/2">
+            <label for="" class=""><span class="block mb-1 mr-1.5">اجرت ساخت</span></label>
+            <input type="text" class="w-full p-4 rounded-xl border border-gray-400 outline-none">
+          </div>
+          <div class="mb-5 md:w-1/2">
+            <label for="" class=""><span class="block mb-1 mr-1.5">سود فروش</span></label>
+            <input type="text" class="w-full p-4 rounded-xl border border-gray-400 outline-none">
+          </div>
+          </div> 
+        </div>
+     </div>
+     <!--END FORM INPUT--------------------------------------------------------------------------------  -->
+
+     <!----------------------------------------------------------------BUY GOLD BZR && BUY GOLD TALASEA  -->
+      <div class="flex flex-col md:flex-row md:gap-x-5 px-4 container mx-auto 2xl:max-w-screen-xl  ">
+        <div class="md:w-1/2">
+          <div class="bg-yellow-100 w-full mb-3 p-4 flex items-center justify-center rounded-xl text-sm md:text-base text-gray-800 font-medium">خرید طلا از بازار</div>
+        <div class="w-full bg-yellow-300 mb-2 rounded-xl px-4 py-6 min-h-96">
+          <div class="flex flex-col mb-10 whitespace-nowrap">
+            <span class="text-sm md:text-base text-gray-900 font-medium mb-2">قیمت طلای محصول:</span>
+            <div class="flex justify-between items-center">
+            <span class="text-xs font-medium text-gray-600">وزن × نرخ روز طلا</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+          <div class="flex flex-col mb-10 whitespace-nowrap">
+            <span class="text-sm  md:text-base text-gray-900 font-medium mb-2">اجرت ساخت:</span>
+            <div class="flex justify-between items-center">
+            <span class="text-xs font-medium text-gray-600">قیمت طلا × ۱۸  ٪</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+         <div class="flex flex-col mb-10 whitespace-nowrap">
+            <span class="text-sm  md:text-base text-gray-900 font-medium mb-2">سود فروش طلا</span>
+            <div class="flex justify-between items-center">
+            <span  class="text-xs font-medium text-gray-600">(قیمت طلا + اجرت ساخت) × ۷ ٪</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+         <div class="flex flex-col  whitespace-nowrap">
+            <span class="text-sm  md:text-base text-gray-900 font-medium mb-2">مالیات:</span>
+            <div class="flex justify-between items-center">
+            <span class="text-xs font-medium text-gray-600"> (سودفروش + اجرت ساخت) × ۹  ٪</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+        </div>
+        <div class="bg-yellow-300 w-full mb-10 p-4 flex items-center justify-center rounded-xl text-sm md:text-base text-gray-800 font-medium">مجموع: ۰ تومان </div>
+        </div>
+        <div class="md:w-1/2 ">
+          <div class="bg-yellow-100 w-full mb-3 p-4 flex items-center justify-center rounded-xl text-sm md:text-base text-gray-800 font-medium">خرید طلا از طلاسی</div>
+         <div class="w-full bg-yellow-300 mb-2 rounded-xl px-4 py-6 flex flex-col min-h-96">
+          <div class="flex flex-col mb-10 whitespace-nowrap ">
+            <span class="text-sm md:text-base text-gray-900 font-medium mb-2">قیمت طلای محصول:</span>
+            <div class="flex justify-between items-center">
+            <span class="text-xs font-medium text-gray-600">وزن × نرخ روز طلا</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+          
+         <div class="flex flex-col mb-10 whitespace-nowrap">
+            <span class="text-sm  md:text-base text-gray-900 font-medium mb-2">سود فروش طلا</span>
+            <div class="flex justify-between items-center">
+            <span  class="text-xs font-medium text-gray-600 ">قیمت طلا × ۱۰۰  ٪</span>
+            <span class="text-gray-900 text-sm">۰ تومان</span>
+            </div>
+          </div>
+        
+        </div>
+        <div class="bg-yellow-300 w-full mb-10 p-4 flex items-center justify-center rounded-xl text-sm md:text-base text-gray-800 font-medium">مجموع: ۰ تومان </div>
+        </div>
+      </div>
+
+     <!----------------------------------------------------------------BUY GOLD BZR && BUY GOLD TALASEA  -->
+
   </body>
 </html>
+   
+
+<!-- ۰۱۲۳۴۵۶۷۸۹ -->
